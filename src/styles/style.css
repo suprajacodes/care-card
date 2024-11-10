@@ -1,0 +1,45 @@
+/* styles.css */
+
+/* Donation Item Card */
+.donation-item {
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+  
+  .donation-item h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .donation-item p {
+    margin: 5px 0;
+  }
+  
+  .donation-item button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .donation-item button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Donation Form */
+  .donation-form {
+    margin-top: 20px;
+  }
+  
+  .donation-form input {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  .donation-form button {
+    padding: 8px 16px;
+  }
+  
