@@ -1,18 +1,25 @@
-// DonationService.js
+// donationService.js
 
-import { db } from '../firebaseConfig';  // Adjust to the correct path
-import { collection, addDoc } from 'firebase/firestore';  // Import Firestore methods
+import { db, auth } from '../firebaseConfig';  // Import Firebase configuration
+import { collection, addDoc } from 'firebase/firestore';
 
-export const donateItem = async (donation) => {
+// Function to donate an item to Firestore
+const donateItem = async (item) => {
   try {
-    // Add donation to Firestore
-    const docRef = await addDoc(collection(db, "donations"), {
-      name: donation.name,
-      donatedAt: new Date(),
+    // Add the donation to Firestore
+    await addDoc(collection(db, "donations"), {
+      item: item.name,  // Donation item name
+      user: auth.currentUser.uid  // User ID (from Firebase Auth)
     });
-    console.log("Donation added with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding donation: ", e);
-    throw new Error('Donation failed. Please try again later.');
+
+    // Notify user of successful donation
+    alert('Thank you for your donation!');
+  } catch (error) {
+    // Handle errors
+    console.error("Error adding donation: ", error);
+    //manual comment
+    //alert('There was an error with your donation. Please try again later.');
   }
 };
+//
+export { donateItem };

@@ -11,3 +11,337 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Global Reset and Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Header */
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Donation Form */
+.donation-form {
+  background-color: #fff;
+  padding: 30px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.donation-form:hover {
+  transform: translateY(-5px);
+}
+
+.donation-form input {
+  width: 100%;
+  max-width: 450px;
+  padding: 14px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.donation-form input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+}
+
+.donation-form button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 14px 28px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.donation-form button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.donation-form button:active {
+  background-color: #1c5989;
+}
+
+/* Points and Badges Section */
+.donation-info {
+  background: linear-gradient(135deg, #2980b9, #8e44ad);
+  padding: 40px;
+  margin-top: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.donation-info h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.donation-info h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #f39c12;
+  margin-top: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.donation-info .points-value {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #f1c40f;
+  margin-top: 10px;
+}
+
+/* Badges Section */
+.badges-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.badges-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.badges-container ul li {
+  background-color: #e74c3c;
+  padding: 18px 30px;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.badges-container ul li:hover {
+  transform: scale(1.1);
+  background-color: #c0392b;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.badges-container ul li svg {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+.badges-container ul li .badge-text {
+  margin-left: 10px;
+}
+
+/* No Badges Message */
+.no-badges {
+  font-size: 1.8rem;
+  color: #ecf0f1;
+  font-style: italic;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* Badge Animations */
+@keyframes badgePop {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.badges-container ul li {
+  animation: badgePop 0.5s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .donation-form, .donation-info {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .donation-info h2 {
+    font-size: 2rem;
+  }
+
+  .donation-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .points-value {
+    font-size: 2.5rem;
+  }
+
+  .donation-form input, .donation-form button {
+    font-size: 1rem;
+  }
+
+  .badges-container ul li {
+    font-size: 1.1rem;
+    padding: 12px 20px;
+  }
+
+  .donation-info .points-value {
+    font-size: 2rem;
+  }
+}
+
+/* Container for Donation Items */
+.donation-item {
+  width: 300px;
+  height: 400px;
+  margin: 20px;
+  perspective: 1500px; /* Adds depth for 3D effect */
+  display: inline-block;
+}
+
+/* The Card that wraps both front and back */
+.donation-item-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Flip effect when hovered */
+.donation-item:hover .donation-item-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front of the card */
+.donation-item-front, .donation-item-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #f0f0f0; /* Default background for both sides */
+  color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Front: Basic Information */
+.donation-item-front {
+  background-color: #2980b9; /* Soft blue background */
+
+}
+
+.donation-item-front h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.donation-item-front p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Back: Donation Button */
+.donation-item-back {
+  background-color: #3498db; /* Blue background for back */
+  transform: rotateY(180deg); /* This makes the back of the card hidden initially */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donation-item-back button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donation-item-back button:hover {
+  background-color: #c0392b;
+}
+
+.donation-item-back button:active {
+  background-color: #1c5989;
+}
+
+/* Adding some spacing between items */
+.donation-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+.category-buttons button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.category-buttons button.selected {
+  background-color: #4CAF50; /* Selected color */
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+
+

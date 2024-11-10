@@ -1,4 +1,4 @@
-// Import the necessary functions from the Firebase SDK
+// Import the necessary functions from Firebase SDK
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";  // Firestore
 import { getAuth } from "firebase/auth";  // Firebase Authentication
